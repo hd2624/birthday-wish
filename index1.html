@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Birthday Wish</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ffe259, #ffa751);
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+      text-align: center;
+      padding: 0 20px;
+    }
+    h1 {
+      font-size: 3rem;
+      color: #d94e67;
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease forwards;
+    }
+    input[type="text"] {
+      font-size: 1.5rem;
+      padding: 12px 20px;
+      width: 280px;
+      border-radius: 50px;
+      border: 3px solid #d94e67;
+      text-align: center;
+      margin-bottom: 20px;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+    input[type="text"]:focus {
+      border-color: #ff6f61;
+    }
+    button {
+      background-color: #d94e67;
+      color: white;
+      font-size: 1.3rem;
+      padding: 12px 40px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 6px 14px rgba(217, 78, 103, 0.7);
+      transition: transform 0.3s ease;
+    }
+    button:hover {
+      transform: scale(1.1);
+    }
+    #wishMessage {
+      margin-top: 40px;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #ff6f61;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+    #wishMessage.visible {
+      opacity: 1;
+    }
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Take Your Birthday Wish</h1>
+  <input type="text" id="nameInput" placeholder="Enter her name" />
+  <button onclick="sendWish()">Wish Her!</button>
+  <div id="wishMessage"></div>
+
+  <script>
+    function sendWish() {
+      const name = document.getElementById('nameInput').value.trim();
+      const messageDiv = document.getElementById('wishMessage');
+      if (!name) {
+        messageDiv.textContent = 'Please enter your name!';
+        messageDiv.style.color = 'red';
+        messageDiv.classList.add('visible');
+        return;
+      }
+      const message = `Happy Birthday, ${name}! Happy Birthday to someone once so near 🎉,
+Our paths may differ but memories clear 💭.
+The laughter we shared, the tears we knew 😂😭,
+Forever in my heart, a place for you ❤️.
+
+Though time has changed the way we connect ⏳,
+I wish you joy and nothing less perfect 🌟.
+May your days be bright with love and peace ☀️🕊️,
+And all your worries gently cease 🌸.
+
+May new dreams blossom fresh and wide 🌷✨,
+With happiness always by your side 😊💫.
+Thank you for the moments, both good and tough 🤝,
+They made us strong, they made us enough 💪.
+
+On this day, I truly wish you well 🎂🎈,
+In your happiness, may you always dwell 🏡❤️.
+A sincere wish from afar I send 📬,
+Happy Birthday, dear old friend 🎊🎁.`;
+      messageDiv.textContent = message;
+      messageDiv.style.color = '#ff6f61';
+      messageDiv.classList.add('visible');
+    }
+  </script>
+
+</body>
+</html>
